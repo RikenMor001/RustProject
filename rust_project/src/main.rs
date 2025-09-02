@@ -79,7 +79,7 @@ fn main() {
     println!("\n Let's try division!");
 
     let mut inputForDivisionForFirstOperand = String::new();
-    let mut inputForDivisionB = String::new();
+    let mut inputForDivisionForSecondOperand = String::new();
 
     println!("Enter a number for the first operant: ");
     io::stdin()
@@ -87,6 +87,18 @@ fn main() {
     .expect("Failed to read input number for the first operand");    
 
     println!("Enter a number for the second operand:");
+
+    io::stdin()
+    .read_line(&mut inputForDivisionForSecondOperand)
+    .expect("Failed to read input number for the second operand");
+
+    let first_number = match inputForDivisionForFirstOperand.trim().parse::<i32>(){
+        Ok(number) => number,
+        Err(_) => {
+            println!("Invalid input for first number! Please enter a valid number.");
+            return;
+        }
+    };
 }
 
 fn add_numbers(a: i32, b: i32) -> i32 {
