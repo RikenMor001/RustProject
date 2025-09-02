@@ -75,6 +75,18 @@ fn main() {
     println!("{} - {} = {}", first_number, second_number, subtraction_result);
 
     println!("\nProgram completed successfully!");
+
+    println!("\n Let's try division!");
+
+    let mut inputForDivisionForFirstOperand = String::new();
+    let mut inputForDivisionB = String::new();
+
+    println!("Enter a number for the first operant: ");
+    io::stdin()
+    .read_line(&mut inputForDivisionForFirstOperand)
+    .expect("Failed to read input number for the first operand");    
+
+    println!("Enter a number for the second operand:");
 }
 
 fn add_numbers(a: i32, b: i32) -> i32 {
@@ -87,4 +99,8 @@ fn multiply_by_two(x: i32) -> i32 {
 
 fn subtract_numbers(a: i32, b: i32) -> i32 {
     a - b
+}
+
+fn divide_numbers(a: i32, b: i32) -> i32{
+    a / b
 }
