@@ -99,6 +99,14 @@ fn main() {
             return;
         }
     };
+
+    let second_number = match inputForDivisionForSecondOperand.trim().parse::<i32>(){
+        ok(number) => number,
+        Err(_) => {
+            println!("Invalid input for second number! Please enter a valid number.");
+            return;
+        }
+    };
 }
 
 fn add_numbers(a: i32, b: i32) -> i32 {
