@@ -92,7 +92,7 @@ fn main() {
     .read_line(&mut inputForDivisionForSecondOperand)
     .expect("Failed to read input number for the second operand");
 
-    let first_number = match inputForDivisionForFirstOperand.trim().parse::<i32>(){
+    let firstNumberToDivide = match inputForDivisionForFirstOperand.trim().parse::<i32>(){
         Ok(number) => number,
         Err(_) => {
             println!("Invalid input for first number! Please enter a valid number.");
@@ -100,13 +100,17 @@ fn main() {
         }
     };
 
-    let second_number = match inputForDivisionForSecondOperand.trim().parse::<i32>(){
-        ok(number) => number,
+    let secondNumberToDivide = match inputForDivisionForSecondOperand.trim().parse::<i32>(){
+        Ok(number) => number,
         Err(_) => {
             println!("Invalid input for second number! Please enter a valid number.");
             return;
         }
     };
+    
+    let division_result = divide_numbers(firstNumberToDivide, secondNumberToDivide);
+    println!("{} / {} = {}", firstNumberToDivide, secondNumberToDivide, division_result);
+    println!("\nProgram completed successfully!");
 }
 
 fn add_numbers(a: i32, b: i32) -> i32 {
